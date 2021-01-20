@@ -1,0 +1,23 @@
+<h1>Full Pc & Printer <small>Nuestros productos</small></h1>
+<hr>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let producto of productos">
+        <div class="card mb-3" style="max-width: 500px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img class="p-3" src="../../../assets/img/pc.png" alt="Producto Full PC" style="max-width: 100px;"/>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ producto.nombre_producto }}</h5>
+                        <p class="card-title">Marca: <small class="text-muted">{{ producto.marca }}</small></p>
+                        <p class="card-text">{{ producto.descripcion }}.</p>
+                        <p class="card-text"><small class="text-muted">{{ producto.precio | number : '1.2-2' }} MXN</small></p>
+                        <button type="button" (click)="verProducto(producto.id)" class="btn btn-outline-primary btn-block d-block w-100 mt-2">Ver más...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
